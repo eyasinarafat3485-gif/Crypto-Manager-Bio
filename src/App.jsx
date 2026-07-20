@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BioLayout from './components/BioLayout';
 import ProfileHeader from './components/ProfileHeader';
 import LinkCard from './components/LinkCard';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 // Icon imports from react-icons
 import { FaTelegramPlane, FaHandshake } from 'react-icons/fa';
@@ -97,15 +98,27 @@ const LINKS = [
 ];
 
 export default function App() {
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem('bio_page_theme') || 'nebula';
+  });
+
+  const handleSelectTheme = (newTheme) => {
+    setTheme(newTheme);
+    localStorage.setItem('bio_page_theme', newTheme);
+  };
+
   return (
-    <BioLayout>
-      {/* 1. Profile Header Section (Uses default props configured in ProfileHeader.jsx) */}
-      <ProfileHeader animationDelay={0} />
+    <BioLayout currentTheme={theme}>
+      {/* Background Theme Selector Widget */}
+      <ThemeSwitcher currentTheme={theme} onSelectTheme={handleSelectTheme} />
+
+      {/* 1. Profile Header Section */}
+      <ProfileHeader animationDelay={0} currentTheme={theme} />
 
       {/* 2. Dynamic Link Buttons Stack */}
       <div className="w-full flex flex-col gap-3 mt-2">
         {LINKS.map((link, index) => (
-          <LinkCard key={link.id || index} link={link} index={index} />
+          <LinkCard key={link.id || index} link={link} index={index} currentTheme={theme} />
         ))}
       </div>
 

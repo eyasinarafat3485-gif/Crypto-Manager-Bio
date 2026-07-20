@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCheckCircle, FaTelegramPlane, FaInstagram } from 'react-icons/fa';
+import { THEMES } from './ThemeSwitcher';
 
 /**
  * Default Social Media Links Configuration
@@ -11,7 +12,6 @@ const DEFAULT_SOCIALS = [
     icon: <FaTelegramPlane className="text-lg text-sky-400 group-hover:text-white transition-colors" />,
     color: 'hover:bg-sky-500/20 hover:border-sky-500/40 hover:shadow-sky-500/20',
   },
-
   {
     name: 'Instagram',
     url: 'https://www.instagram.com/edgehonestama',
@@ -31,7 +31,10 @@ export default function ProfileHeader({
   isVerified = true,
   socials = DEFAULT_SOCIALS,
   animationDelay = 0,
+  currentTheme = 'nebula',
 }) {
+  const activeTheme = THEMES.find((t) => t.id === currentTheme) || THEMES[0];
+
   return (
     <div
       className="flex flex-col items-center text-center w-full animate-fade-in-up"
@@ -39,7 +42,9 @@ export default function ProfileHeader({
     >
       {/* Avatar Wrapper with Smooth Glowing Border */}
       <div className="relative group cursor-pointer">
-        <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 opacity-40 blur-md group-hover:opacity-85 transition duration-500" />
+        <div
+          className={`absolute -inset-1 rounded-full bg-gradient-to-r ${activeTheme.gradientAvatar} opacity-50 blur-md group-hover:opacity-90 transition duration-500`}
+        />
         <img
           src={avatarUrl}
           alt={name}
@@ -59,14 +64,14 @@ export default function ProfileHeader({
         </h1>
         {isVerified && (
           <FaCheckCircle
-            className="text-cyan-400 text-lg sm:text-xl shrink-0"
+            className={`${activeTheme.accentText} text-lg sm:text-xl shrink-0 transition-colors duration-500`}
             title="Verified Official Account"
           />
         )}
       </div>
 
-      {/* Profile Handle (Normal Case preserved) */}
-      <p className="mt-1 text-xs font-semibold text-cyan-400/90 tracking-wider">
+      {/* Profile Handle */}
+      <p className={`mt-1 text-xs font-semibold ${activeTheme.accentText} tracking-wider transition-colors duration-500`}>
         {handle}
       </p>
 
@@ -77,7 +82,7 @@ export default function ProfileHeader({
           href="https://t.me/StrikeLabsChat"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cyan-400 hover:text-cyan-300 font-semibold underline decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors"
+          className={`${activeTheme.accentText} hover:brightness-125 font-semibold underline decoration-current/40 transition-all`}
         >
           @StrikeLabsChat
         </a>{' '}
@@ -86,7 +91,7 @@ export default function ProfileHeader({
           href="https://t.me/GlobalTopKols"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-cyan-400 hover:text-cyan-300 font-semibold underline decoration-cyan-500/40 hover:decoration-cyan-400 transition-colors"
+          className={`${activeTheme.accentText} hover:brightness-125 font-semibold underline decoration-current/40 transition-all`}
         >
           @GlobalTopKols
         </a>{' '}
