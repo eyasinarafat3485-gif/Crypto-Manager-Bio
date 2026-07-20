@@ -10,9 +10,9 @@ import { FaXTwitter } from 'react-icons/fa6';
 import { SiBinance } from 'react-icons/si';
 import { FiMic, FiList } from 'react-icons/fi';
 
-// =========================================================================
+// =======================
 // 🔗 EXACT LINK ITEMS MATCHING YOUR REFERENCE
-// =========================================================================
+// ======================
 const LINKS = [
   {
     id: 1,
