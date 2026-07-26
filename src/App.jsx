@@ -124,7 +124,6 @@ export default function App() {
 
       {/* 3. Footer Branding Section */}
       <footer className="mt-4 pt-4 border-t border-slate-800/60 text-center text-xs text-slate-500 flex items-center justify-between">
-        <span>© {new Date().getFullYear()} Strike Labs</span>
         <a
           href="https://t.me/EdgeHonestAMA"
           target="_blank"
