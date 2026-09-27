@@ -137,9 +137,16 @@ export default function App() {
           href="https://t.me/EdgeHonestAMA"
           target="_blank"
           rel="noopener noreferrer"
-          className="font-bold text-sm text-slate-200 hover:text-cyan-400 transition-colors tracking-wide"
+          className="font-bold text-sm text-slate-200 hover:text-cyan-400 transition-colors tracking-wide animate-ringtone inline-flex items-center gap-2 group"
+          title="Click to DM Community Manager 24/7"
         >
-          Contact Community Manager
+          <span className="p-1.5 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 group-hover:bg-sky-500/20 transition-colors">
+            <FaTelegramPlane className="text-xs" />
+          </span>
+          <span>Contact Community Manager</span>
+          <span className="text-[10px] px-2 py-0.5 rounded-full font-extrabold bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+            24/7 DM
+          </span>
         </a>
       </footer>
     </BioLayout>
