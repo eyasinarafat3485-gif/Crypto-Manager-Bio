@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaCheckCircle, FaTelegramPlane, FaInstagram } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { THEMES } from './ThemeSwitcher';
 
 /**
@@ -11,6 +12,12 @@ const DEFAULT_SOCIALS = [
     url: 'https://t.me/EdgeHonestAMA',
     icon: <FaTelegramPlane className="text-lg text-sky-400 group-hover:text-white transition-colors" />,
     color: 'hover:bg-sky-500/20 hover:border-sky-500/40 hover:shadow-sky-500/20',
+  },
+  {
+    name: 'X (Twitter)',
+    url: 'https://x.com/EdgeHonestAMA',
+    icon: <FaXTwitter className="text-lg text-slate-200 group-hover:text-white transition-colors" />,
+    color: 'hover:bg-slate-700/40 hover:border-slate-500/40 hover:shadow-slate-500/20',
   },
   {
     name: 'Instagram',

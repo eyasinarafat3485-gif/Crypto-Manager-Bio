@@ -7,7 +7,7 @@ import ThemeSwitcher from './components/ThemeSwitcher';
 // Icon imports from react-icons
 import { FaTelegramPlane, FaHandshake } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { SiBinance } from 'react-icons/si';
+import { SiBinance, SiCoinmarketcap } from 'react-icons/si';
 import { FiMic, FiList } from 'react-icons/fi';
 
 // =======================
@@ -19,6 +19,7 @@ const LINKS = [
     title: '📲 DM FOR AMA/PROPOSAL TG',
     url: 'https://t.me/EdgeHonestAMA',
     icon: <FaHandshake className="text-xl text-emerald-400" />,
+    avatar: '/placeholder-manager.jpeg',
     badge: 'Direct DM',
     badgeColor: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
     highlight: true,
@@ -42,14 +43,14 @@ const LINKS = [
   {
     id: 4,
     title: 'X - TWITTER',
-    url: 'http://x.com/StrikeLabsNewsX',
+    url: 'https://x.com/EdgeHonestAMA',
     icon: <FaXTwitter className="text-xl text-slate-100" />,
     badge: 'Twitter Spaces',
     badgeColor: 'bg-slate-700/30 text-slate-200 border-slate-600/30',
   },
   {
     id: 5,
-    title: 'BINANCE SQUARE LIVE 42K+',
+    title: 'BINANCE SQUARE LIVE 62K+',
     url: 'https://app.binance.com/uni-qr/cpro/CityCryptoNews',
     icon: <SiBinance className="text-xl text-amber-400" />,
     badge: 'Binance Live',
@@ -57,6 +58,14 @@ const LINKS = [
   },
   {
     id: 6,
+    title: 'COINMARKETCAP COMMUNITY 300K+',
+    url: 'https://coinmarketcap.com/community/profile/Strike_Labs',
+    icon: <SiCoinmarketcap className="text-xl text-blue-400" />,
+    badge: 'CMC Live',
+    badgeColor: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  },
+  {
+    id: 7,
     title: 'BINANCE AMA RECAP',
     url: 'https://t.me/StrikeLabsNews/12570',
     icon: <SiBinance className="text-xl text-cyan-400" />,
@@ -64,7 +73,7 @@ const LINKS = [
     badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
   },
   {
-    id: 7,
+    id: 8,
     title: 'X - SPACE AMA RECAP',
     url: 'https://t.me/StrikeLabsNews/12572',
     icon: <FiMic className="text-xl text-cyan-400" />,
@@ -72,7 +81,7 @@ const LINKS = [
     badgeColor: 'bg-cyan-500/10 text-cyan-400 border-cyan-500/20',
   },
   {
-    id: 8,
+    id: 9,
     title: 'TELEGRAM AMA RECAP',
     url: 'https://t.me/StrikeLabsNews/12393',
     icon: <FaTelegramPlane className="text-xl text-sky-400" />,
@@ -80,7 +89,7 @@ const LINKS = [
     badgeColor: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
   },
   {
-    id: 9,
+    id: 10,
     title: 'TEXT AMA RECAP',
     url: 'https://t.me/StrikeLabsNews/12502',
     icon: <FaTelegramPlane className="text-xl text-purple-400" />,
@@ -88,7 +97,7 @@ const LINKS = [
     badgeColor: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
   },
   {
-    id: 10,
+    id: 11,
     title: 'OFFICIAL KOL CHANNEL LIST',
     url: 'https://t.me/GlobalTopKols',
     icon: <FiList className="text-xl text-pink-400" />,
@@ -123,12 +132,12 @@ export default function App() {
       </div>
 
       {/* 3. Footer Branding Section */}
-      <footer className="mt-4 pt-4 border-t border-slate-800/60 text-center text-xs text-slate-500 flex items-center justify-between">
+      <footer className="mt-6 pt-4 border-t border-slate-800/60 flex items-center justify-center text-center">
         <a
           href="https://t.me/EdgeHonestAMA"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-cyan-400 transition-colors"
+          className="font-bold text-sm text-slate-200 hover:text-cyan-400 transition-colors tracking-wide"
         >
           Contact Community Manager
         </a>

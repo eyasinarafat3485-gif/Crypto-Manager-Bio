@@ -54,3 +54,67 @@
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(156, 163, 175, 0.4);
 }
+
+/* Continuous Wiggle / Pulse for Attention-grabbing DM Link */
+@keyframes dmWiggle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  15% {
+    transform: translateY(-2px) scale(1.01) rotate(-0.5deg);
+  }
+  30% {
+    transform: translateY(1px) scale(1) rotate(0.5deg);
+  }
+  45% {
+    transform: translateY(-2px) scale(1.01) rotate(-0.5deg);
+  }
+  60% {
+    transform: translateY(0) scale(1) rotate(0.5deg);
+  }
+  75% {
+    transform: translateY(-1px) scale(1.005) rotate(0deg);
+  }
+}
+
+@keyframes glowPulseEmerald {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.3), inset 0 0 10px rgba(16, 185, 129, 0.15);
+    border-color: rgba(52, 211, 153, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.65), inset 0 0 20px rgba(16, 185, 129, 0.3);
+    border-color: rgba(52, 211, 153, 1);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  60%, 100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.animate-dm-attention {
+  opacity: 1 !important;
+  animation: dmWiggle 3s infinite ease-in-out, glowPulseEmerald 2s infinite ease-in-out;
+}
+
+.shimmer-effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.18) 50%,
+    transparent 100%
+  );
+  animation: shimmerSweep 3.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
